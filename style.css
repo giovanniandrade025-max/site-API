@@ -10,7 +10,7 @@ body {
 
 .inicio {
     height: 600px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/pulpfiction.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/batman_xlg.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -52,4 +52,43 @@ body {
 
 .menu a:hover {
     color: #EF3935;
+}
+
+.categorias {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.categorias-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    overflow-x: auto;
+}
+
+.categoria {
+    background-color: transparent;
+    border: none;
+    color: #555555;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 4px;
+}
+
+
+.categoria:hover {
+    background-color: #FDE2E2;
+    color: #EF3935;
+}
+
+.categoria.ativa {
+    background-color: #EF3935;
+    color: #FFFFFF;
+    font-weight: bold;
 }
