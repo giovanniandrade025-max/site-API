@@ -122,3 +122,50 @@ body {
     width: 100%;
     font-size: 1rem;
 }
+
+.filmes-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card-filme {
+    background-color: #727272;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.poster-box img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.info-filme {
+    padding: 10px;
+}
+
+.titulo-filme {
+    font-size: 0.95rem;
+    color: #fff;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.genero-filme {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 0;
+}
