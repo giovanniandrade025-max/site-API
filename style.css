@@ -92,3 +92,33 @@ body {
     color: #FFFFFF;
     font-weight: bold;
 }
+
+.pesquisa {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1rem;
+}
