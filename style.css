@@ -2,17 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+main {
+    width: 100%;
+}
+
+/*1. CABEÇALHO E HERO */
 .inicio {
-    height: 600px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/batman_xlg.jpg);
+    height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/supergirl.jpg');
     background-size: cover;
-    background-position: center;
 }
 
 .header {
@@ -25,7 +33,6 @@ body {
     height: 80px;
     margin: 0 auto;
     padding: 0 30px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,20 +47,22 @@ body {
 
 .menu {
     display: flex;
-    gap: 35px;
+    gap: 40px;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
 }
 
-.menu a:hover {
-    color: #EF3935;
+.menu a:hover,
+.menu a.ativo {
+    color: #0fcfff;
+    font-weight: bold;
 }
 
+/* 2. CATEGORIAS E FILTROS */
 .categorias {
     background-color: #ffffff;
     border-bottom: 1px solid #dddddd;
@@ -67,28 +76,31 @@ body {
     align-items: center;
     justify-content: center;
     gap: 35px;
-    overflow-x: auto;
 }
 
 .categoria {
     background-color: transparent;
     border: none;
     color: #555555;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 16px;
+
     cursor: pointer;
-    padding: 10px 18px;
+    padding: 8px 16px;
     border-radius: 4px;
 }
 
 
 .categoria:hover {
-    background-color: #FDE2E2;
-    color: #EF3935;
+    background-color: #e2edfd;
+    color: #4A69B3;
+    ;
+    ;
 }
 
 .categoria.ativa {
-    background-color: #EF3935;
+    background-color: #4A69B3;
+    ;
+    ;
     color: #FFFFFF;
     font-weight: bold;
 }
@@ -109,12 +121,6 @@ body {
     max-width: 400px;
 }
 
-.search-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
 .search-box input {
     border: none;
     outline: none;
@@ -129,14 +135,24 @@ body {
     margin: 0 auto;
 }
 
+.btn-pesquisa {
+    background: none;
+    background-color: #72727231;
+    border-radius: 50px;
+    border: none;
+    font-size: 1REM;
+    padding: 9px 15px;
+    cursor: pointer;
+}
+
 .grid-filmes {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .card-filme {
-    background-color: #727272;
+    background-color: #4A69B3;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -168,4 +184,24 @@ body {
     font-size: 0.8rem;
     color: #aaa;
     margin: 0;
+}
+
+/* 2. FAVORITOS */
+.favoritos-footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 4px 6%;
+    background-color: #4A69B3;
+}
+
+.titulo-secao {
+    margin-bottom: 25px;
+    color: white;
+    text-align: center;
+    font-family: 24;
+}
+
+.mensagem-vazia {
+    color: white;
+    text-align: center;
 }

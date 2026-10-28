@@ -3,65 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Profiles</title>
+    <title>SCREEN</title>
 
     <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-
   <body>
-    <section class="inicio">
+    <div class="inicio">
       <header class="header">
         <div class="header-content">
           <div class="logo">SCREEN</div>
-
           <nav class="menu">
-            <a href="#">Filmes</a>
-            <a href="#">Séries</a>
-            <a href="#">Favoritos</a>
-            <a href="#">Sobre</a>
+            <a href="index.html" class="ativo">Catálogo</a>
+            <a href="favoritos.html">Favoritos</a>
           </nav>
         </div>
       </header>
+    </div>
+
+    <main>
+      <!-- Categorias -->
+      <section class="categorias">
+        <div class="categorias-content" id="container-categorias">
+          <button class="categoria ativa">Todos</button>
+          <button class="categoria">Ação</button>
+          <button class="categoria">Comédia</button>
+          <button class="categoria">Terror</button>
+        </div>
+      </section>
+
+      <!-- Formulário de Pesquisa -->
+      <section class="pesquisa">
+        <form id="form-pesquisa" class="search-box">
+          <input
+            type="text"
+            id="input-pesquisa"
+            placeholder="Pesquisar filmes..."
+          />
+          <button type="submit" class="btn-pesquisa" aria-label="Buscar">
+            Pesquisar
+          </button>
+        </form>
+      </section>
+      <!-- Grid de Produtos -->
+      <section class="filmes-container">
+        <div id="grid-filmes" class="grid-filmes">
+          <!-- Conteúdo dinâmico via JS -->
+        </div>
+      </section>
+    </main>
+    <!-- Seção de Favoritos -->
+    <section id="secao-favoritos" class="favoritos-footer">
+      <h2 class="titulo-secao">Meus Favoritos</h2>
+      <div
+        id="mensagem-favoritos-vazia"
+        class="mensagem-vazia"
+        style="display: none"
+      >
+        <p>Sua lista de favoritos está vazia.</p>
+      </div>
+      <div id="grid-favoritos" class="grid-filmes"></div>
     </section>
 
-    <section class="categorias">
-      <div class="categorias-content">
-        <button class="categoria ativa">Todos</button>
-        <button class="categoria">Ação</button>
-        <button class="categoria">Aventura</button>
-        <button class="categoria">Comédia</button>
-        <button class="categoria">Drama</button>
-        <button class="categoria">Terror</button>
-        <button class="categoria">Romance</button>
-        <button class="categoria">Ficção científica</button>
-      </div>
-    </section>
-    <section class="pesquisa">
-      <div class="search-box">
-        <i data-lucide="search" class="search-icon"></i>
-        <input type="text" placeholder="Pesquisar filmes ou séries..." />
-      </div>
-    </section>
-
-    <section class="filmes-container">
-      <div id="grid-filmes"  class="grid-filmes">
-        <div class="card-filme">
-          <div class="poster-box">
-            <img src="https://via.placeholder.com/300x450" alt="Capa do Filme" />
-          </div>
-          <div class="info-filme">
-            <h3 class="titulo-filme"> Título do filme</h3>
-            <p class="genero-filme"> ação, aventura</p>
-          </div>
+    <div id="modal-detalhes" class="modal" style="display: none">
+      <div class="modal-content">
+        <button id="btn-fechar-modal" class="btn-fechar">&times;</button>
+        <div id="detalhes-produto">
+          <!-- Informações inseridas via JS -->
         </div>
       </div>
-    </section>
-    <!-- Barra de Pesquisa -->
-    <script>
-      lucide.createIcons();
-    </script>
-  </body>
-</html>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
