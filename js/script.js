@@ -12,12 +12,17 @@ function renderizarFilmes(lista) {
 
   lista.forEach(filme => {
     const cardHTML = `
-      <div>
-        <img src="${filme.poster}" alt="${filme.title}">
-        <h3>${filme.title}</h3>
-        <p>Duração: ${filme.runtime}</p>
-        <p>Gênero: ${filme.genre}</p>
-        <p>Nota IMDB: ${filme.imdbRating}</p>
+      <div class ="card-filme">
+        <img src="${filme.poster}" alt="${filme.title}" onerror="this.src='images/sem-poster.png'">
+        <div class="info-filme">
+          <h3>${filme.title}</h3>
+          <p>Duração: ${filme.runtime}</p>
+          <p>Gênero: ${filme.genre}</p>
+          <p>Nota IMDB: ${filme.imdbRating}</p>
+          <button class="btn-favorito" onclick="adicionarFavorito('${filme.id}')">
+            Adicionar aos favoritos
+          </button>
+        </div>
       </div>
     `;
     filmes.innerHTML += cardHTML;

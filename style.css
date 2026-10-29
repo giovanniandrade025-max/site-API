@@ -148,42 +148,54 @@ main {
 .grid-filmes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 25px;
+    padding: 30px;
 }
 
 .card-filme {
-    background-color: #4A69B3;
-    border-radius: 8px;
-    overflow: hidden;
+    background-color: rgb(232, 234, 243);
+    color: #4A69B3;
+    border-radius: 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.poster-box img {
+.card-filme img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 2 / 3;
+    height: 300px;
     object-fit: cover;
-    display: block;
+    border-radius: 8px;
 }
 
 .info-filme {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-.titulo-filme {
-    font-size: 0.95rem;
-    color: #fff;
-    margin: 0 0 5px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.info-filme h3 {
+    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
-.genero-filme {
-    font-size: 0.8rem;
-    color: #aaa;
-    margin: 0;
+.info-filme p {
+    margin-bottom: 10px;
+}
+
+
+.btn-favorito {
+    background-color: #4A69B3;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    margin-top: auto;
+    padding: 13px;
+    margin-bottom: 4px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* 2. FAVORITOS */

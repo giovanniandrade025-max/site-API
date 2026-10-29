@@ -1,79 +1,73 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCREEN</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SCREEN</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <div class="inicio">
+      <header class="header">
+        <div class="header-content">
+          <div class="logo">SCREEN</div>
+          <nav class="menu">
+            <a href="index.html" class="ativo">Catálogo</a>
+            <a href="favoritos.html">Favoritos</a>
+          </nav>
+        </div>
+      </header>
+    </div>
 
-<body>
-  <div class="inicio">
-    <header class="header">
-      <div class="header-content">
-        <div class="logo">SCREEN</div>
-        <nav class="menu">
-          <a href="index.html" class="ativo">Catálogo</a>
-          <a href="favoritos.html">Favoritos</a>
-        </nav>
-      </div>
-    </header>
-  </div>
+    <main>
+      <!-- Categorias -->
+      <section class="categorias">
+        <div class="categorias-content" id="container-categorias">
+          <button class="categoria ativa">Todos</button>
+          <button class="categoria">Ação</button>
+          <button class="categoria">Comédia</button>
+          <button class="categoria">Drama</button>
+        </div>
+      </section>
 
-  <main>
-    <!-- Categorias -->
-    <section class="categorias">
-      <div class="categorias-content" id="container-categorias">
-        <button class="categoria ativa">Todos</button>
-        <button class="categoria">Ação</button>
-        <button class="categoria">Comédia</button>
-        <button class="categoria">Drama</button>
-      </div>
-    </section>
+      <!-- Formulário de Pesquisa -->
+      <section class="pesquisa">
+        <form id="form-pesquisa" class="search-box">
+          <input
+            type="text"
+            id="input-pesquisa"
+            placeholder="Pesquisar filmes..."
+          />
+          <button type="submit" class="btn-pesquisa" aria-label="Buscar">
+            Pesquisar
+          </button>
+        </form>
+      </section>
+      <!-- Grid de Produtos -->
+      <section class="filmes-container">
+        <div id="grid-filmes" class="grid-filmes">
+          <div>
+            <img src="" alt="" />
+            <h3>Titúlo</h3>
+            <p>Duração: 234 min</p>
+            <p>Gênero: Romance</p>
+            <p>Nota IMBL: 3.0</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <!-- Formulário de Pesquisa -->
-    <section class="pesquisa">
-      <form id="form-pesquisa" class="search-box">
-        <input type="text" id="input-pesquisa" placeholder="Pesquisar filmes..." />
-        <button type="submit" class="btn-pesquisa" aria-label="Buscar">
-          Pesquisar
-        </button>
-      </form>
-    </section>
-    <!-- Grid de Produtos -->
-    <section class="filmes-container">
-      <div id="grid-filmes" class="grid-filmes">
-        <div>
-          <img src="" alt="">
-          <h3>Titúlo</h3>
-          <p>Duração: 234 min</p>
-          <p>Gênero: Romance</p>
-        <p>Nota IMBL: 3.0</p>
+    <div id="modal-detalhes" class="modal" style="display: none">
+      <div class="modal-content">
+        <button id="btn-fechar-modal" class="btn-fechar">&times;</button>
+        <div id="detalhes-produto">
+          <!-- Informações inseridas via JS -->
         </div>
       </div>
-    </section>
-  </main>
-  <!-- Seção de Favoritos -->
-  <section id="secao-favoritos" class="favoritos-footer">
-    <h2 class="titulo-secao">Meus Favoritos</h2>
-    <div id="mensagem-favoritos-vazia" class="mensagem-vazia" style="display: none">
-      <p>Sua lista de favoritos está vazia.</p>
     </div>
-    <div id="grid-favoritos" class="grid-filmes"></div>
-  </section>
 
-  <div id="modal-detalhes" class="modal" style="display: none">
-    <div class="modal-content">
-      <button id="btn-fechar-modal" class="btn-fechar">&times;</button>
-      <div id="detalhes-produto">
-        <!-- Informações inseridas via JS -->
-      </div>
-    </div>
-  </div>
-
-  <script src="js/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
