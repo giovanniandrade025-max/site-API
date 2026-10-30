@@ -16,7 +16,7 @@ O **SCREEN** é uma plataforma *Web Frontend* construída com **JavaScript**, se
 
 A aplicação está publicada e pode ser acessada diretamente pelo navegador através do link:
 
-👉 **[Acessar o SCREEN](https://giovanniandrade025-max.github.io/site-API/)**
+👉 **[Acessar o SCREEN]([https://giovanniandrade025-max.github.io/site-API/](https://giovanniandrade025-max.github.io/site-API/))**
 
 ---
 
