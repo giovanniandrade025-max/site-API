@@ -22,6 +22,9 @@ fetch(url)
                     <p><strong>Direção:</strong> ${filme.director}</p>
                     <p><strong>Elenco:</strong> ${filme.actors}</p>
                     <p><strong>Prêmios:</strong> ${filme.awards}</p>
+                     <button class="btn-favorito" onclick="adicionarFavorito('${filme.id}')">
+            Adicionar aos favoritos
+          </button>
                 </div>
             </div>
         `;
