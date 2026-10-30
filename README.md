@@ -12,26 +12,18 @@
 
 O **SCREEN** é uma plataforma *Web Frontend* construída com **JavaScript**, sem a utilização de frameworks ou bibliotecas externas. A aplicação consome dados dinâmicos através de uma API HTTP pública, permitindo uma navegação por categorias, busca combinada em tempo real e persistência de dados local (LocalStorage).
 
-## 💻 Como Executar o Projeto
+## 🌐 Acesso Online (GitHub Pages)
 
-Como o projeto utiliza **JavaScript Modules (`import`/`export`)**, ele precisa ser executado através de um servidor local para evitar bloqueios de segurança do navegador.
+A aplicação está publicada e pode ser acessada diretamente pelo navegador através do link:
 
-### Opção 1: Usando a extensão Live Server (VS Code)
+👉 **[Acessar o SCREEN](https://giovanniandrade025-max.github.io/site-API/)**
 
-1. Abra a pasta do projeto no **Visual Studio Code**.
+---
 
-2. Certifique-se de ter a extensão **Live Server** instalada.
+## 💻 Como Executar Localmente (Opcional)
 
-3. Clique com o botão direito no arquivo `index.html` e selecione **Open with Live Server**.
+Caso prefira executar o projeto na sua máquina local:
 
-### Opção 2: Usando Python
-
-Se preferir utilizar o terminal, navegue até a pasta raiz do projeto e execute:
-
-```
-# Para Python 3.x
-python -m http.server 8000
-
-```
-
-Em seguida, abra o navegador e acesse `http://localhost:8000`.
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/giovanniandrade025-max/site-API.git](https://github.com/giovanniandrade025-max/site-API.git)
