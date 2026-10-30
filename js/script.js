@@ -33,9 +33,31 @@ async function renderizarFilmes(lista) {
   });
 }
 
-async function pesquisaPorCategoria(categoria) {
-  return filmesSalvos.filter(filme => filme.genre.toLowerCase().includes(categoria.toLowerCase()));
+function obterFilmesDaCategoriaAtiva() {
+  const abaAtiva = document.querySelector('.categoria.ativa')?.textContent.trim() || 'Todos';
+
+  if (abaAtiva === 'Ação') {
+    return filmesSalvos.filter(f => f.genre.toLowerCase().includes('action'));
+  } else if (abaAtiva === 'Comédia') {
+    return filmesSalvos.filter(f => f.genre.toLowerCase().includes('comedy'));
+  } else if (abaAtiva === 'Drama') {
+    return filmesSalvos.filter(f => f.genre.toLowerCase().includes('drama'));
+  } else if (abaAtiva === 'Favoritos') {
+    return filmesSalvos.filter(f => ehFavorito(f.id));
+  }
+  return filmesSalvos;
 }
+
+async function aplicarFiltros(termo = '') {
+  const listaCategoria = obterFilmesDaCategoriaAtiva();
+  const inputPesquisa = document.getElementById('input-pesquisa');
+  const textoBusca = termo || inputPesquisa?.value || '';
+
+  const resultado = buscarPorNome(listaCategoria, textoBusca);
+  await renderizarFilmes(resultado);
+}
+
+filmes.innerHTML = '<p>Carregando filmes...</p>';
 
 async function carregarFilmes() {
   try {
@@ -48,14 +70,11 @@ async function carregarFilmes() {
     await renderizarFilmes(filmesSalvos);
 
     inicializarBusca((nome) => {
-    
-      categorias.forEach(b => b.classList.remove('ativa'));
-      
-      const resultado = buscarPorNome(filmesSalvos, nome);
-      renderizarFilmes(resultado);
+      aplicarFiltros(nome);
     });
 
   } catch (error) {
+    filmes.innerHTML = '<p class="erro">Não foi possível carregar os filmes. Tente novamente mais tarde.</p>';
     console.error('Ocorreu um erro:', error);
   }
 }
@@ -68,13 +87,7 @@ window.adicionarFavorito = function (event, filmeId) {
   }
   
   alternarFavorito(filmeId);
-
-  const abaAtiva = document.querySelector('.categoria.ativa');
-  if (abaAtiva) {
-    abaAtiva.click();
-  } else {
-    renderizarFilmes(filmesSalvos);
-  }
+  aplicarFiltros();
 };
 
 categorias.forEach(botao => {
@@ -82,32 +95,10 @@ categorias.forEach(botao => {
     categorias.forEach(b => b.classList.remove('ativa'));
     botao.classList.add('ativa');
 
-    const categoriaSelecionada = botao.textContent.trim();
-
-    if (categoriaSelecionada === 'Todos') {
-      await renderizarFilmes(filmesSalvos);
-
-    } else if (categoriaSelecionada === 'Ação') {
-      const resultado = await pesquisaPorCategoria('action');
-      await renderizarFilmes(resultado);
-
-    } else if (categoriaSelecionada === "Comédia") {
-      const resultado = await pesquisaPorCategoria('comedy');
-      await renderizarFilmes(resultado);
-
-    } else if (categoriaSelecionada === 'Drama') {
-      const resultado = await pesquisaPorCategoria('drama');
-      await renderizarFilmes(resultado);
-
-    } else if (categoriaSelecionada === 'Favoritos') {
-      const listaFavs = filmesSalvos.filter(f => ehFavorito(f.id));
-      await renderizarFilmes(listaFavs);
-    }
+    await aplicarFiltros();
   });
 });
 
 window.abrirDetalhes = function (id) {
   window.location.href = `detalhes.html?id=${id}`;
 };
-
-// TESTA O FILTRO DE PESQUISA POR QUE NÃO PARECE FUNCIONAR CORRETAMENTE
