@@ -153,13 +153,13 @@ main {
 }
 
 .card-filme {
-    background-color: rgb(232, 234, 243);
-    color: #4A69B3;
+    background-color: #f0f0f0;
+    color: #555555;
     border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .card-filme img {
@@ -167,12 +167,14 @@ main {
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .info-filme {
     display: flex;
     flex-direction: column;
     flex: 1;
+    cursor: pointer;
 }
 
 .info-filme h3 {
@@ -182,6 +184,8 @@ main {
 
 .info-filme p {
     margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 

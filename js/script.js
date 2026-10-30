@@ -12,8 +12,8 @@ function renderizarFilmes(lista) {
 
   lista.forEach(filme => {
     const cardHTML = `
-      <div class ="card-filme">
-        <img src="${filme.poster}" alt="${filme.title}" onerror="this.src='images/sem-poster.png'">
+      <div class ="card-filme" onclick="abrirDetalhes('${filme.id}')">
+        <img src="${filme.poster}" alt="${filme.title}" onerror="this.src='style/images/sem-poster.png'">
         <div class="info-filme">
           <h3>${filme.title}</h3>
           <p>Duração: ${filme.runtime}</p>
@@ -69,4 +69,11 @@ categorias.forEach(botao => {
     }
   });
 });
+function abrirDetalhes(id) {
+  window.location.href = `detalhes.html?id=${id}`;
+}
+// FAZ COM QUE O CARD SEJA CLICAVEL E QUE REDIRECIONE PARA A PAGINA DETALHES
 
+//FAZ COM QUE O FILME POSSA SER DIRECIONADA PARA O FILTRO DE FAVORITOS AO CLICAR NO BOTAO E QUE DENTRO DA CATEGORIA O BOTAO MUDE PARA "REMOVER DOS FAVORITOS"
+
+// TESTA O FILTRO DE PESQUISA POR QUE NÃO PARECE FUNCIONAR CORRETAMENTE

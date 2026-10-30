@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    background-color: #4A69B3;
+}
+
+.header-content {
+    max-width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    color: #ffffff;
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #0fcfff;
+    font-weight: bold;
+}
+
+.cartao-filme {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.cartao-filme img {
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.info-filme {
+    margin: 20px;
+}
+
+.info-filme h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.info-filme p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.sinopse {
+    margin-top: 30px;
+}
