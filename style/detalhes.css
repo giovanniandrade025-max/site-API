@@ -100,3 +100,49 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 900px) {
+    .cartao-filme {
+        gap: 35px;
+        margin: 35px auto;
+        padding: 25px;
+    }
+
+    .info-filme {
+        margin: 10px;
+    }
+
+    .info-filme h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        height: 65px;
+    }
+
+    .logo {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    .cartao-filme {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+        margin: 25px auto;
+        padding: 15px;
+    }
+
+    .info-filme {
+        width: 100%;
+        margin: 0;
+    }
+
+}

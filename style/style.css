@@ -145,6 +145,13 @@ main {
     cursor: pointer;
 }
 
+.aviso-detalhes {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+}
+
 .grid-filmes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
